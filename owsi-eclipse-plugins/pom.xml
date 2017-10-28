@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>fr.openwide.eclipse.plugins</groupId>
+	<artifactId>owsi-eclipse-plugins</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>Plugins Eclipse d'OWSI</name>
+	<description>Plugins Eclipse d'OWSI</description>
+
+	<modules>
+		<module>owsi-eclipse-m2e-plugins</module>
+		<module>owsi-eclipse-plugins-repo</module>
+	</modules>
+
+	<properties>
+		<tycho.version>0.25.0</tycho.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>mars</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/mars</url>
+		</repository>
+
+		<repository>
+			<id>m2e</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/technology/m2e/releases/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<ignoreTychoRepositories>true</ignoreTychoRepositories>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

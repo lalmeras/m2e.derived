@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mark derived maven sub-modules (feature)
+Bundle-Vendor: Open Wide
+Bundle-SymbolicName: fr.openwide.eclipse.plugins.m2e.derived.feature
+Bundle-Version: 0.0.4
+Bundle-Localization: plugin
