@@ -3,7 +3,7 @@
 	<description url="http://www.openwide.fr">
 		Open Wide
 	</description>
-	<feature url="features/fr.openwide.eclipse.plugins.m2e.derived.feature_0.0.5.jar" id="fr.openwide.eclipse.plugins.m2e.derived.feature" version="0.0.5">
+	<feature url="features/fr.openwide.eclipse.plugins.m2e.derived.feature_0.0.6.jar" id="fr.openwide.eclipse.plugins.m2e.derived.feature" version="0.0.6">
 		<category name="Open Wide m2e connectors" />
 	</feature>
 	<category-def name="Open Wide m2e connectors" label="Open Wide m2e connectors" />
