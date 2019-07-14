@@ -9,6 +9,12 @@ easily get rid of redundant matches in search results
 
 It relies on m2e (Eclipse Maven integration plugin).
 
+## How to update version
+
+```
+mvn tycho-versions:set-version -DnewVersion=0.0.X
+```
+
 ## Build and deploy
 
 Build uses maven+tycho plugin.
@@ -17,7 +23,7 @@ To perform p2 deployment (repository update), it uses
 ``tycho-p2-extras-plugin:add-to-update-site`` to download an existing
 update site and build an updated folder.
 
-Configuration is located in ``owsi-eclipse-plugins-repo/pom.xml`` andtargeted
+Configuration is located in ``owsi-eclipse-plugins-repo/pom.xml`` and targeted
 to http://dl.likide.org/eclipse/repositories/m2.derived/ update site.
 
 A ``mvn install`` command creates an updated repository folder in
