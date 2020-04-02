@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>fr.openwide.eclipse.plugins</groupId>
 		<artifactId>owsi-eclipse-plugins</artifactId>
-		<version>0.0.10</version>
+		<version>0.0.12</version>
 	</parent>
 
 	<artifactId>owsi-eclipse-plugins-repo</artifactId>
@@ -20,7 +20,7 @@
 				<executions>
 					<execution>
 						<id>add-to-update-site</id>
-						<phase>install</phase>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>mirror</goal>
 						</goals>
