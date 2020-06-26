@@ -3,11 +3,11 @@
 	<parent>
 		<groupId>fr.openwide.eclipse.plugins</groupId>
 		<artifactId>owsi-eclipse-m2e-plugins</artifactId>
-		<version>0.0.12</version>
+		<version>0.0.13</version>
 	</parent>
 
 	<artifactId>fr.openwide.eclipse.plugins.m2e.derived</artifactId>
-	<version>0.0.12</version>
+	<version>0.0.13</version>
 	<packaging>eclipse-plugin</packaging>
 
 	<name>Mark as derived maven sub-modules</name>
