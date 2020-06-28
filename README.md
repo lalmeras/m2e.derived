@@ -15,6 +15,10 @@ It relies on m2e (Eclipse Maven integration plugin).
 mvn tycho-versions:set-version -DnewVersion=0.0.X
 ```
 
+You way need to update m2e version and dependencies versions :
+
+(``owsi-eclipse-m2e-plugins/fr.openwide.eclipse.plugins.m2e.derived/META-INF/MANIFEST.MF``)
+
 ## Build and deploy
 
 Build uses maven+tycho plugin.
