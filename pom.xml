@@ -3,7 +3,7 @@
 
 	<groupId>fr.openwide.eclipse.plugins</groupId>
 	<artifactId>owsi-eclipse-plugins</artifactId>
-	<version>0.0.14</version>
+	<version>0.0.15</version>
 	<packaging>pom</packaging>
 
 	<name>Plugins Eclipse d'OWSI</name>
