@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>fr.openwide.eclipse.plugins</groupId>
 		<artifactId>owsi-eclipse-plugins</artifactId>
-		<version>0.0.15</version>
+		<version>0.0.16</version>
 	</parent>
 
 	<artifactId>owsi-eclipse-plugins-repo</artifactId>
@@ -27,7 +27,7 @@
 						<configuration>
 							<source>
 								<repository>
-									<url>http://dl.likide.org/eclipse/repositories/m2.derived/</url>
+									<url>https://nexus.tools.kobalt.fr/repository/eclipse-m2e-derived/</url>
 								</repository>
 							</source>
 							<destination>${project.build.directory}/repository</destination>

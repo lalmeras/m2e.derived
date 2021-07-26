@@ -16,8 +16,8 @@ mvn tycho-versions:set-version -DnewVersion=0.0.X
 ```
 
 You way need to update m2e version and dependencies versions :
-
-(``owsi-eclipse-m2e-plugins/fr.openwide.eclipse.plugins.m2e.derived/META-INF/MANIFEST.MF``)
+keys ``org.eclipse.m2e.*`` in ``owsi-eclipse-m2e-plugins/fr.openwide.eclipse.plugins.m2e.derived/META-INF/MANIFEST.MF``
+(check previous releases commits).
 
 ## Build and deploy
 
@@ -32,10 +32,11 @@ mvn clean install
 Updated repository can be deployed using rsync:
 
 ```
+# prerequisites: rclone remove eclipse-m2e-derived must be configured
 # check updated files (dry-run)
-rsync -n -c -av ./owsi-eclipse-plugins-repo/target/repository/ dl.likide.org:/data/services/dl/documentroot/eclipse/repositories/m2.derived/
+rclone sync -v --dry-run ./owsi-eclipse-plugins-repo/target/repository/ eclipse-m2e-derived:eclipse-m2e-derived
 # perform real update
-rsync -c -av ./owsi-eclipse-plugins-repo/target/repository/ dl.likide.org:/data/services/dl/documentroot/eclipse/repositories/m2.derived/
+rclone sync -v ./owsi-eclipse-plugins-repo/target/repository/ eclipse-m2e-derived:eclipse-m2e-derived
 ```
 
 ## About tycho configuration
@@ -45,4 +46,4 @@ To perform p2 deployment (repository update), it uses
 update site and build an updated folder.
 
 Configuration is located in ``owsi-eclipse-plugins-repo/pom.xml`` and targets
-to http://dl.likide.org/eclipse/repositories/m2.derived/ update site.
+to https://nexus.tools.kobalt.fr/repository/eclipse-m2e-derived/ update site.
