@@ -2,7 +2,7 @@
 <feature
       id="fr.openwide.eclipse.plugins.m2e.derived.feature"
       label="%featureName"
-      version="0.0.16"
+      version="0.0.17"
       provider-name="%providerName"
       plugin="fr.openwide.eclipse.plugins.m2e.derived">
 
@@ -22,7 +22,7 @@
          id="fr.openwide.eclipse.plugins.m2e.derived"
          download-size="0"
          install-size="0"
-         version="0.0.16"
+         version="0.0.17"
          unpack="false" />
 
 </feature>

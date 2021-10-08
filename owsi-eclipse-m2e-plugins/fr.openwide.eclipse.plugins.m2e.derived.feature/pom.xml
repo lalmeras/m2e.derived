@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>fr.openwide.eclipse.plugins</groupId>
 		<artifactId>owsi-eclipse-m2e-plugins</artifactId>
-		<version>0.0.16</version>
+		<version>0.0.17</version>
 	</parent>
 
 	<artifactId>fr.openwide.eclipse.plugins.m2e.derived.feature</artifactId>
-	<version>0.0.16</version>
+	<version>0.0.17</version>
 	<packaging>eclipse-feature</packaging>
 
 	<build>
