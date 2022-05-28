@@ -7,10 +7,8 @@
 	</parent>
 
 	<artifactId>fr.openwide.eclipse.plugins.m2e.derived</artifactId>
-	<version>0.0.19</version>
 	<packaging>eclipse-plugin</packaging>
 
 	<name>Mark as derived maven sub-modules</name>
 	<description>Mark as derived maven sub-modules</description>
-
 </project>
