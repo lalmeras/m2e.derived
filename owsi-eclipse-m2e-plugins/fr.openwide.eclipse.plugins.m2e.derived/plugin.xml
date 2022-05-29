@@ -9,18 +9,32 @@
 		</lifecycleMapping>
 	</extension>
 	
-	<extension point = "org.eclipse.ui.popupMenus">
-		<objectContribution
-			id="fr.openwide.eclipse.plugins.m2e.derived.markSubModulesAsDerivedContribution"
-			objectClass="org.eclipse.core.resources.IProject"
-			adaptable="true">
-			<action id="fr.openwide.eclipse.plugins.m2e.derived.markSubModulesAsDerivedAction"
-				label="%markSubModulesAsDerived.action"
-				menubarPath="org.eclipse.m2e.core.mavenMenu/markSubModulesAsDerived"
-				class="fr.openwide.eclipse.plugins.m2e.derived.internal.MarkSubModulesAsDerivedAction"
-				definitionId="fr.openwide.eclipse.plugins.m2e.derived.markSubModulesAsDerivedAction"
-				enablesFor="+">
-			</action>
-		</objectContribution>
+	<extension point="org.eclipse.ui.commands">
+		<command
+			categoryId="fr.openwide.eclipse.plugins.m2e.derived.category.toolbox"
+			id="fr.openwide.eclipse.plugins.m2e.derived.command.markSubmodulesAsDerived"
+			description="%markSubModulesAsDerived.action"
+			name="%markSubModulesAsDerived.action">
+		</command>
+		<category
+			name="%markSubModulesAsDerived.toolbox.category.name"
+			description="%markSubModulesAsDerived.toolbox.category.desc"
+			id="fr.openwide.eclipse.plugins.m2e.derived.category.toolbox">
+		</category>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="fr.openwide.eclipse.plugins.m2e.derived.internal.MarkSubModulesAsDerivedHandler"
+			commandId="fr.openwide.eclipse.plugins.m2e.derived.command.markSubmodulesAsDerived">
+		</handler>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:org.eclipse.ui.popup.any">
+			<menu id="fr.openwide.eclipse.plugins.m2e.derived.menu.toolbox"
+				label="%markSubModulesAsDerived.toolbox.menu.name">
+				<command commandId="fr.openwide.eclipse.plugins.m2e.derived.command.markSubmodulesAsDerived">
+				</command>
+			</menu>
+		</menuContribution>
 	</extension>
 </plugin>
