@@ -1,6 +1,6 @@
 package fr.openwide.eclipse.plugins.m2e.derived.internal;
 
-import static fr.openwide.eclipse.plugins.m2e.derived.internal.MarkSubModulesAsDerivedPlugin.PLUGIN_ID;
+import static fr.openwide.eclipse.plugins.m2e.derived.internal.Plugin.PLUGIN_ID;
 
 import java.util.List;
 
@@ -18,15 +18,15 @@ import org.eclipse.m2e.core.MavenPlugin;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
 import org.eclipse.m2e.core.project.IMavenProjectRegistry;
 
-public class MarkSubModulesAsDerivedJob extends Job {
+public class MarkAsDerivedJob extends Job {
 
-	private static final ILog LOGGER = Platform.getLog(MarkSubModulesAsDerivedHelper.class);
+	private static final ILog LOGGER = Platform.getLog(Helpers.class);
 
 	private static final String MAVEN_NATURE_ID = "org.eclipse.m2e.core.maven2Nature";
 
 	private List<IResource> resources;
 
-	public MarkSubModulesAsDerivedJob(String name, List<IResource> containers) {
+	public MarkAsDerivedJob(String name, List<IResource> containers) {
 		super(name);
 
 		this.resources = containers;
@@ -75,7 +75,7 @@ public class MarkSubModulesAsDerivedJob extends Job {
 				IMavenProjectFacade projectFacade = projectManager.create(project, projectMonitor.newChild(1));
 				if (projectFacade != null) {
 					LOGGER.log(new Status(IStatus.INFO, PLUGIN_ID, String.format("MavenFacade found for %s. setDerived starts.", project.getName())));
-					MarkSubModulesAsDerivedHelper.markProjectSubModulesAsDerived(projectFacade, projectMonitor.newChild(1));
+					Helpers.markProjectSubModulesAsDerived(projectFacade, projectMonitor.newChild(1));
 				} else {
 					LOGGER.log(new Status(IStatus.ERROR, PLUGIN_ID, String.format("MavenFacade not found on Project %s. setDerived failed.", project.getName()))); //$NON-NLS-1$
 				}

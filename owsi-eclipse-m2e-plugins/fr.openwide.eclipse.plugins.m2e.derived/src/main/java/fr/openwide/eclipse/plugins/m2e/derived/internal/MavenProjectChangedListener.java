@@ -8,6 +8,6 @@ public class MavenProjectChangedListener implements IMavenProjectChangedListener
 
 	@Override
 	public void mavenProjectChanged(MavenProjectChangedEvent[] arg0, IProgressMonitor arg1) {
-		MarkSubModulesAsDerivedHelper.configure(arg0, arg1);
+		Helpers.configure(arg0, arg1);
 	}
 }

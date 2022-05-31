@@ -1,6 +1,6 @@
 package fr.openwide.eclipse.plugins.m2e.derived.internal;
 
-import static fr.openwide.eclipse.plugins.m2e.derived.internal.MarkSubModulesAsDerivedPlugin.PLUGIN_ID;
+import static fr.openwide.eclipse.plugins.m2e.derived.internal.Plugin.PLUGIN_ID;
 
 import java.util.List;
 
@@ -15,9 +15,9 @@ import org.eclipse.m2e.core.project.IMavenProjectFacade;
 import org.eclipse.m2e.core.project.MavenProjectChangedEvent;
 import org.eclipse.m2e.core.project.configurator.ProjectConfigurationRequest;
 
-public class MarkSubModulesAsDerivedHelper {
+public class Helpers {
 
-	private static final ILog LOGGER = Platform.getLog(MarkSubModulesAsDerivedHelper.class);
+	private static final ILog LOGGER = Platform.getLog(Helpers.class);
 
 	public static void configure(MavenProjectChangedEvent[] events, IProgressMonitor monitor) {
 		for (MavenProjectChangedEvent event : events) {

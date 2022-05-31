@@ -18,7 +18,7 @@ public class MarkSubModulesAsDerivedHandler extends AbstractHandler {
 		if (selection != null) {
 			@SuppressWarnings("unchecked")
 			final List<IResource> containers = selection.toList();
-			Job job = new MarkSubModulesAsDerivedJob(Messages.markSubModulesAsDerived_markingDerived, containers);
+			Job job = new MarkAsDerivedJob(Messages.markSubModulesAsDerived_markingDerived, containers);
 			job.schedule();
 		}
 		return null;

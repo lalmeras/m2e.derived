@@ -1,8 +1,8 @@
 package fr.openwide.eclipse.plugins.m2e.derived.internal;
 
-public class MarkSubModulesAsDerivedPlugin {
+public class Plugin {
 
-	private MarkSubModulesAsDerivedPlugin() {}
+	private Plugin() {}
 
 	public final static String PLUGIN_ID = "fr.openwide.eclipse.plugins.m2e.derived";
 }
