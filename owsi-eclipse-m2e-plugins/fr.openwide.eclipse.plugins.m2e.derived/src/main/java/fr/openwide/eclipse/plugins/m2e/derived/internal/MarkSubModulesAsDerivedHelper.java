@@ -12,11 +12,18 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
+import org.eclipse.m2e.core.project.MavenProjectChangedEvent;
 import org.eclipse.m2e.core.project.configurator.ProjectConfigurationRequest;
 
 public class MarkSubModulesAsDerivedHelper {
 
 	private static final ILog LOGGER = Platform.getLog(MarkSubModulesAsDerivedHelper.class);
+
+	public static void configure(MavenProjectChangedEvent[] events, IProgressMonitor monitor) {
+		for (MavenProjectChangedEvent event : events) {
+			markProjectSubModulesAsDerived(event.getMavenProject(), monitor);
+		}
+	}
 
 	public static void configure(ProjectConfigurationRequest request, IProgressMonitor monitor) {
 		markProjectSubModulesAsDerived(request.getMavenProjectFacade(), monitor);

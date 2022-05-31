@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<extension point="org.eclipse.m2e.core.lifecycleMappings">
-		<lifecycleMapping
-			class="fr.openwide.eclipse.plugins.m2e.derived.internal.MarkSubModulesAsDerivedLifecycleMapping"
-			id="NULL"
-			name="Mark sub-modules as derived (Noop replacement)">
-		</lifecycleMapping>
-	</extension>
-	
 	<extension point="org.eclipse.ui.commands">
 		<command
 			categoryId="fr.openwide.eclipse.plugins.m2e.derived.category.toolbox"
@@ -36,5 +28,8 @@
 				</command>
 			</menu>
 		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.m2e.core.mavenProjectChangedListeners">
+		<listener class="fr.openwide.eclipse.plugins.m2e.derived.internal.MavenProjectChangedListener" />
 	</extension>
 </plugin>
