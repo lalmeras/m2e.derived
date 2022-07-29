@@ -36,6 +36,11 @@ public class Helpers {
 		LOGGER.log(new Status(IStatus.INFO, PLUGIN_ID, String.format("Mark sub-modules as derived, searching sub-modules in %s...", projectName))); //$NON-NLS-1$
 		List<String> modules = mavenProjectFacade.getMavenProjectModules();
 		for (String module : modules) {
+			if (module.startsWith("../")) {
+				// modules can be referenced outside projet; for this case, we do not need to setup derived flag
+				LOGGER.log(new Status(IStatus.INFO, PLUGIN_ID, String.format("Skipped %s > %s as it lives outside of project", projectName, module))); //$NON-NLS-1$
+				continue;
+			}
 			LOGGER.log(new Status(IStatus.INFO, PLUGIN_ID, String.format("Sub-module %s > %s found, trying to setDerived...", projectName, module))); //$NON-NLS-1$
 			IFolder folder = mavenProjectFacade.getProject().getFolder(module);
 			if (folder.exists()) {
