@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>fr.openwide.eclipse.plugins</groupId>
 		<artifactId>owsi-eclipse-plugins</artifactId>
-		<version>0.0.21</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<artifactId>owsi-eclipse-plugins-repo</artifactId>

@@ -19,14 +19,14 @@ public class Helpers {
 
 	private static final ILog LOGGER = Platform.getLog(Helpers.class);
 
-	public static void configure(MavenProjectChangedEvent[] events, IProgressMonitor monitor) {
+	public static void configure(List<MavenProjectChangedEvent> events, IProgressMonitor monitor) {
 		for (MavenProjectChangedEvent event : events) {
 			markProjectSubModulesAsDerived(event.getMavenProject(), monitor);
 		}
 	}
 
 	public static void configure(ProjectConfigurationRequest request, IProgressMonitor monitor) {
-		markProjectSubModulesAsDerived(request.getMavenProjectFacade(), monitor);
+		markProjectSubModulesAsDerived(request.mavenProjectFacade(), monitor);
 	}
 
 	public static void markProjectSubModulesAsDerived(IMavenProjectFacade mavenProjectFacade, IProgressMonitor monitor) {
